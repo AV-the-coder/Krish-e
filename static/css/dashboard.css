@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:500&display=swap');
+
+
+.card {
+  position: relative;
+  width:  324px;
+  min-height: 200px;
+  
+  border-radius: 10px;
+  overflow: hidden;
+  
+  color: black;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+}
+
+.card__description {
+  padding: 1em 2em;
+  background-color: #E0E2EB;
+  text-align: center;
+}
+
+a {
+  color: #8b3923;
+}
+
+a:hover {
+  color: #bf4e30;
+}
+
+
+
+/* OTHER */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  font-family: 'Ubuntu', sans-serif;
+  color: hsl(231, 20%, 85%);
+  background-color: #121420;
+} */
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container > *:not(:first-child) {
+  margin-left: 1em;
+}
+
+

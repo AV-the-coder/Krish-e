@@ -6,22 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/nav-bar.css')}}">
+<link href="{{url_for('static', filename='css/dashboard.css')}}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav-bar.css')}}">
     <header class="header">
       <h1 class="logo"><a href="{{url_for('home')}}">Krish-e</a></h1>
         <ul class="main-nav">
           <li><a href="/logout">Logout</a></li>
         </ul>
     </header> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Krish-E</title>
   </head>
-  <body>
-    <h1>Dashboard</h1>
-    <a href="{{url_for('logout')}}">Logout</a><br>
-    <a href="{{url_for('crop_prediction')}}">Crop Prediction</a><br>
-    <a href="{{url_for('fert_recommend')}}">Fertilizer Prediction</a><br>
-
+  <body style='background:#BFCCB5'>
+    <h1></h1>
+    <div style='margin:100px'></div>
+    <div class="container">
+      <a href="{{url_for('crop_prediction')}}">
+      <figure class="card">
+        <img class="card__image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCtUee-0poCH3AUAHeK0fvtgmzpkUOUtJDLww_JSRVvlb0ZjsiAVSVPRestJy0L-VfwrrdxsIFEQer89eRYMKLDHLzPX0A6Bcs1oA3qwwKrdzVwFDtygVldPjOe0FWuFHfgNwUWnE_Hupsufjldu8MGgkGBBFK4ZYoQNGc0mRQLNvpEQyB48Yd5YL0Wg/s320/1.png">
+        <figcaption class="card__description">
+          Crop Recommender <br> (Click here)
+        </figcaption>
+      </figure></a><br>
+      <a href="{{url_for('fert_recommend')}}">
+      <figure class="card">
+        <img class="card__image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgliVqmDYyOwbp8R4svufyLO6yWFMedrNsVM5U3hVqu4x175ljJBZ0-k6r_Q9patQ343oC8ukGjqe59l9TwejNdR0QgKlgfY6392w0i8zOy34SI9kiodWI2vJggChgm4SM5ccAQSbO6iO52tOw-STjTjUycYnhhXWzbyOrxGEE3lAd1ft8t-wxd8l-KVA/s320/2.png">
+        <figcaption class="card__description">
+          Fertilizer Recommender <br> (Click here)
+        </figcaption>
+      </figure></a><br>
+        <figure class="card">
+          <img class="card__image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhX24-5SYyLxzO7pn3BU5NuXQhgpuyDWMrD44H5yunZdMyRB-PCy9XrHooosZ2gVK7nPopqWO9TunIiAH_-M9Ch-4f65P_0xMcd6GSsd7lqG6ZVoiOloWWGrTxWUTBLXx3wnmvIJqHttw0dWUdIn9VAUYrpNpsIjTClj5xPyfuV1CkgcIDKV46SZiGlRQ/s320/dis.png">
+          <figcaption class="card__description">
+            Crop Disease Detection  <br>(Coming Soon)
+          </figcaption>
+        </figure>
+    </div>
+    
+    
+    <!-- <div class="main-w" style="display:flex; justify-content: space-evenly;
+    margin: 0 20%;"><div class="img-sec">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCtUee-0poCH3AUAHeK0fvtgmzpkUOUtJDLww_JSRVvlb0ZjsiAVSVPRestJy0L-VfwrrdxsIFEQer89eRYMKLDHLzPX0A6Bcs1oA3qwwKrdzVwFDtygVldPjOe0FWuFHfgNwUWnE_Hupsufjldu8MGgkGBBFK4ZYoQNGc0mRQLNvpEQyB48Yd5YL0Wg/s320/1.png"/>
+    <a href="{{url_for('crop_prediction')}}" style="display:block;">Crop Prediction</a><br></div><div class="img-sec" style="display:block">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgliVqmDYyOwbp8R4svufyLO6yWFMedrNsVM5U3hVqu4x175ljJBZ0-k6r_Q9patQ343oC8ukGjqe59l9TwejNdR0QgKlgfY6392w0i8zOy34SI9kiodWI2vJggChgm4SM5ccAQSbO6iO52tOw-STjTjUycYnhhXWzbyOrxGEE3lAd1ft8t-wxd8l-KVA/s320/2.png" alt="">
+    <a href="{{url_for('fert_recommend')}}" style="display:block;">Fertilizer Prediction</a><br></div>
+  </div> -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

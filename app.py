@@ -298,7 +298,7 @@ def fert_recommend():
         
         pred=dataF([Temperature,Humidity,Moisture,SoilType,CropType,Nitrogen,Potassium,Phosphorous])
         print(pred)
-        return render_template('show.html', crop=pred)
+        return render_template('showF.html', fert=pred)
     return render_template('fertilizer.html', form=form)
 
 
