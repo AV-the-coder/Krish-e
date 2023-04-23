@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Predict the Crop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="{{url_for('static', filename='css/register.css')}}" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static', filename='css/nav-bar.css')}}">
+    <header class="header">
+        <h1 class="logo"><a href="{{url_for('home')}}">Krish-e</a></h1>
+          <ul class="main-nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="#">Contact</a></li>
+          </ul>
+      </header> 
+<!-- //web font -->
+</head>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="" method="post">
+					{{ form.hidden_tag() }}
+					{{ form.n }}
+					<hr>
+					{{ form.p }}
+					<hr>
+                    {{ form.k }}
+					<hr>
+                    {{ form.ph }}
+					<hr>
+                    {{ form.rain }}
+					<hr>
+                    {{ form.temp }}
+					<hr>
+                    {{ form.hum }}
+					<hr>
+					{{ form.submit }}
+				</form>
+				
+			</div>
+		</div>
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+</body>
+</html>
