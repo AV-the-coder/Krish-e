@@ -15,10 +15,7 @@
     <header class="header">
         <h1 class="logo"><a href="{{url_for('home')}}">Krish-e</a></h1>
           <ul class="main-nav">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Contact</a></li>
+			<li><a href="/dashboard">Dashboard</a></li>
           </ul>
       </header> 
 <!-- //web font -->
@@ -36,10 +33,16 @@
 					<hr>
 					{{ form.moist }}
 					<hr>
-                    {{ form.soil }}
+					<div class='labelInput'>
+						Select Soil Type
+						{{ form.soil }}
 					<hr>
-                    {{ form.crop }}
+					</div>
+					<div class='labelInput'>
+						Select Crop Type
+						{{ form.crop }}
 					<hr>
+					</div>
                     {{ form.n }}
 					<hr>
                     {{ form.p }}

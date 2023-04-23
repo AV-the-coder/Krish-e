@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import InputRequired, Length, ValidationError, Email
 from flask_bcrypt import Bcrypt
 import numpy as np
@@ -72,7 +72,12 @@ def dataC(input_data):
 
 fertname_dict={0: '10-26-26', 1: '14-35-14', 2: '17-17-17', 3: '20-20', 4: '28-28', 5: 'DAP', 6: 'Urea'}
 cropType_dict={0: 'Barley', 1: 'Cotton', 2: 'Ground Nuts', 3: 'Maize', 4: 'Millets', 5: 'Oil seeds', 6: 'Paddy', 7: 'Pulses', 8: 'Sugarcane', 9: 'Tobacco', 10: 'Wheat'}
+cropType_dict_key_list = list(cropType_dict.keys())
+cropType_dict_val_list = list(cropType_dict.values())
+
 soil_type_dict={0: 'Black', 1: 'Clayey', 2: 'Loamy', 3: 'Red', 4: 'Sandy'}
+soilType_dict_key_list = list(soil_type_dict.keys())
+soilType_dict_val_list = list(soil_type_dict.values())
 
 fertilizer_recommendation_model=pickle.load(open('./FertilizerModel/trained_model_hj.sav','rb'))
 
@@ -175,11 +180,10 @@ class FertilizerForm(FlaskForm):
     moist = StringField(validators=[
                             InputRequired()], render_kw={"placeholder": "Moisture"})
     
-    soil = StringField(validators=[
-                            InputRequired()], render_kw={"placeholder": "Soil Type"})
+    soil = SelectField(validators=[
+                            InputRequired()], render_kw={"placeholder": "Soil Type"}, choices=[i for i in soil_type_dict.values()])
     
-    crop = StringField(validators=[
-                            InputRequired()], render_kw={"placeholder": "Crop Type"})
+    crop = SelectField('Crop Type', choices=[i for i in cropType_dict.values()])
     
     n = StringField(validators=[
                             InputRequired()], render_kw={"placeholder": "Nitrogen Level"})
@@ -279,15 +283,18 @@ def fert_recommend():
         Temperature=float(form.temp.data)
         Humidity=float(form.hum.data)
         Moisture=float(form.moist.data)
-        SoilType=float(form.soil.data)
-        CropType=float(form.crop.data)
+        Soil=(form.soil.data)
+        Crop=(form.crop.data)
         Nitrogen=float(form.n.data)
         Potassium=float(form.p.data)
         Phosphorous=float(form.k.data)
         # ph=float(form.ph.data)
         # rainfall = float(form.rain.data)
+        positionCrop = cropType_dict_val_list.index(Crop)
+        CropType=cropType_dict_key_list[positionCrop]
         
-        
+        positionSoil = soilType_dict_val_list.index(Soil)
+        SoilType= soilType_dict_key_list[positionSoil]
         
         pred=dataF([Temperature,Humidity,Moisture,SoilType,CropType,Nitrogen,Potassium,Phosphorous])
         print(pred)
