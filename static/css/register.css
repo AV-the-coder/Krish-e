@@ -136,7 +136,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 3em;
   }
   
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="password"], select {
     font-size: 0.9em;
     color: #fff;
     font-weight: 100;
@@ -220,9 +220,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   }
   
   .agileits-top p {
-    font-size: 1em;
+    font-size: 0.8em;
     color: #fff;
-    text-align: center;
     letter-spacing: 1px;
     font-weight: 300;
   }
